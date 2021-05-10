@@ -31,6 +31,7 @@ export const typeDefs = gql`
     finishedCommissions(after: ID, limit: Int): CommissionConnection
     yourFinishedCommissions(after: ID, limit: Int): CommissionConnection
     yourPendingCommissions(after: ID, limit: Int): CommissionConnection
+    commissionCount: Int
   }
 
   type Post {

@@ -236,6 +236,13 @@ export const resolvers = {
         edges: final.map((a) => ({ node: a })),
       };
     },
+    async commissionCount(parent, _args, _context, _info) {
+      const commissions = await Commission.find({
+        _id: { $in: parent.commissions },
+        accepted: false,
+      });
+      return commissions.length;
+    },
   },
   Post: {
     async author(parent, _args, _context, _info) {

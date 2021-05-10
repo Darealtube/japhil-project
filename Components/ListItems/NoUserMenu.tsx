@@ -1,8 +1,4 @@
-import {
-  ListItem,
-  Divider,
-  Button,
-} from "@material-ui/core";
+import { ListItem, Divider, Button } from "@material-ui/core";
 import InfoIcon from "@material-ui/icons/Info";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
@@ -12,11 +8,11 @@ import styles from "../../pages/styles/Specific/Lists.module.css";
 const NoUserMenu = () => {
   const handleSignOut = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    signOut({ callbackUrl: "http://localhost:3000/" });
+    signOut({ callbackUrl: `${process.env.WEB_URL}/` });
   };
   const handleSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    signIn(null, { callbackUrl: "http://localhost:3000/home" });
+    signIn(null, { callbackUrl: `${process.env.WEB_URL}/home` });
   };
   return (
     <div>

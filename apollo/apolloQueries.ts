@@ -477,6 +477,15 @@ export const YOUR_FINISHED_COMMS_QUERY = gql`
   }
 `;
 
+export const COMMISSION_COUNT_QUERY = gql`
+  query CommissionCount($id: ID!) {
+    userId(id: $id) {
+      id
+      commissionCount
+    }
+  }
+`;
+
 export const IS_LIKED_ARTIST = gql`
   query islikedArtist($userID: ID!, $artistName: String!) {
     isLikedArtist(userID: $userID, artistName: $artistName)
